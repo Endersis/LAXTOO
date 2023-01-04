@@ -29,7 +29,7 @@ class Email {
          $mail->Password = '16e0867c6b1ca1';
      
          $mail->setFrom('alexisgt7168@gmail.com');
-         $mail->addAddress('alexisgt7168@gmail.com', 'AppSalon.com');
+         $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
@@ -38,7 +38,7 @@ class Email {
 
          $contenido = '<html>';
          $contenido .= "<p><strong>Hola " . $this->email .  "</strong> Has Creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>";
-         $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";        
+         $contenido .= "<p>Presiona aquí: <a href='http://https://nameless-chamber-04968.herokuapp.com/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";        
          $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
          $contenido .= '</html>';
          $mail->Body = $contenido;
