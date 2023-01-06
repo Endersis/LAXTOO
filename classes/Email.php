@@ -23,6 +23,7 @@ class Email {
     public function enviarConfirmacion() {
 
          // create a new object
+        $mail= new PHPMailer();
         $mail->isSMTP();
         $mail->Host = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth = true;
