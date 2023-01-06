@@ -32,7 +32,7 @@ class Email {
          $mail->Password = $_ENV['MAIL_PASSWORD'];
          $mail->SMTPSecure = 'tls';
      
-         $mail->setFrom('superman28_espuma@hotmail.com');
+         $mail->setFrom('alexisgt7168@gmail.com');
          $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
@@ -65,7 +65,7 @@ class Email {
         $mail->SMTPSecure = 'tls';
     
         $mail->setFrom('alexisgt7168@gmail.com');
-        $mail->addAddress('alexisgt7168@gmail.com', 'AppSalon.com');
+        $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
