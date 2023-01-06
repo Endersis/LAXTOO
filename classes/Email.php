@@ -25,13 +25,12 @@ class Email {
          // create a new object
          $mail = new PHPMailer();
          $mail->isSMTP();
-         $mail->Host = $_ENV['MAIL_HOST'];
+         $mail->Host = 'smtp.mailtrap.io';
          $mail->SMTPAuth = true;
-         $mail->Port = $_ENV['MAIL_PORT'];
-         $mail->Username = $_ENV['MAIL_USER'];
-         $mail->Password = $_ENV['MAIL_PASSWORD'];
-         $mail->SMTPSecure = 'tls';
-     
+         $mail->Port = 2525;
+         $mail->Username = 'e2b6548042e3c9';
+         $mail->Password = '39e50caa49cd18';
+
          $mail->setFrom('alexisgt7168@gmail.com');
          $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
@@ -57,12 +56,11 @@ class Email {
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['MAIL_HOST'];
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['MAIL_PORT'];
-        $mail->Username = $_ENV['MAIL_USER'];
-        $mail->Password = $_ENV['MAIL_PASSWORD'];
-        $mail->SMTPSecure = 'tls';
+        $mail->Port = 2525;
+        $mail->Username = 'e2b6548042e3c9';
+        $mail->Password = '39e50caa49cd18';
     
         $mail->setFrom('alexisgt7168@gmail.com');
         $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
