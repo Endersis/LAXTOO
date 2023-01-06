@@ -1,5 +1,5 @@
 <?php 
-require __DIR__ . 'vendor/bin/heroku-php-apache2 public/';
+require __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv ->safeload();
 require 'funciones.php';
