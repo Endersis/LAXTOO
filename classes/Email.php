@@ -3,9 +3,6 @@
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
-use Dotenv\Dotenv as Dotenv;
-$dotenv = Dotenv::createImmutable('../includes/.env');
-$dotenv->safeLoad();
 
 class Email {
 
@@ -28,20 +25,20 @@ class Email {
          $mail->Host = 'smtp.mailtrap.io';
          $mail->SMTPAuth = true;
          $mail->Port = 2525;
-         $mail->Username = 'e2b6548042e3c9';
-         $mail->Password = '39e50caa49cd18';
-
-         $mail->setFrom('correo@LAXTOO.com');
-         $mail->addAddress('acorreo@LAXTOO.com', 'LAXTOO.com');
+         $mail->Username = '4ec54dfb980a42';
+         $mail->Password = 'ae938c99960f22';
+     
+         $mail->setFrom('cuentas@appsalon.com');
+         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
-         $mail->isHTML(true);
+         $mail->isHTML(TRUE);
          $mail->CharSet = 'UTF-8';
 
          $contenido = '<html>';
          $contenido .= "<p><strong>Hola " . $this->email .  "</strong> Has Creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>";
-         $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com/confirmar-cuenta?token='>Confirmar Cuenta</a>";        
+         $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";        
          $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
          $contenido .= '</html>';
          $mail->Body = $contenido;
@@ -62,17 +59,17 @@ class Email {
         $mail->Username = 'e2b6548042e3c9';
         $mail->Password = '39e50caa49cd18';
     
-        $mail->setFrom('correo@LAXTOO.com');
-        $mail->addAddress('correo@LAXTOO.com', 'LAXTOO.com');
+        $mail->setFrom('cuentas@appsalon.com');
+        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
-        $mail->isHTML(true);
+        $mail->isHTML(TRUE);
         $mail->CharSet = 'UTF-8';
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
-        $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com/confirmar-cuenta?token='>Reestablecer Password</a>";        
+        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/recuperar?token=" . $this->token . "'>Reestablecer Password</a>";        
         $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
         $contenido .= '</html>';
         $mail->Body = $contenido;
