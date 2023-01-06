@@ -32,7 +32,7 @@ class Email {
         $mail->Port = $_ENV['MAIL_PORT'];
      
          $mail->setFrom('cuentas@LAXTOO.com');
-         $mail->addAddress('cuentas@LAXTOO.com', 'LAXTOO.com');
+         $mail->addAddress($this->email);
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
@@ -64,7 +64,7 @@ class Email {
         $mail->Port = $_ENV['MAIL_PORT'];
     
         $mail->setFrom('cuentas@LAXTOO.com');
-        $mail->addAddress('cuentas@LAXTOO.com', 'LAXTOO');
+        $mail->addAddress($this->email);
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
