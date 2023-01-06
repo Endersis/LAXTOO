@@ -3,6 +3,9 @@
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Dotenv/Dotenv as Dotenv;
+$dotenv = Dotenv::createImmutable('../includes/.env');
+$dotenv->safeLoad();
 
 class Email {
 
@@ -22,11 +25,12 @@ class Email {
          // create a new object
          $mail = new PHPMailer();
          $mail->isSMTP();
-         $mail->Host = 'smtp.mailtrap.io';
+         $mail->Host = $_ENV['MAIL_HOST'];
          $mail->SMTPAuth = true;
-         $mail->Port = 2525;
-         $mail->Username = '108e9e914500ae';
-         $mail->Password = '16e0867c6b1ca1';
+         $mail->Port = $_ENV['MAIL_PORT'];
+         $mail->Username = $_ENV['MAIL_USER'];
+         $mail->Password = $_ENV['MAIL_PASSWORD'];
+         $mail->SMTPSecure = 'tls';
      
          $mail->setFrom('superman28_espuma@hotmail.com');
          $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
@@ -38,7 +42,7 @@ class Email {
 
          $contenido = '<html>';
          $contenido .= "<p><strong>Hola " . $this->email .  "</strong> Has Creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>";
-         $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com/'>Confirmar Cuenta</a>";        
+         $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com'>Confirmar Cuenta</a>";        
          $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
          $contenido .= '</html>';
          $mail->Body = $contenido;
@@ -53,11 +57,12 @@ class Email {
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '108e9e914500ae';
-        $mail->Password = '16e0867c6b1ca1';
+        $mail->Port = $_ENV['MAIL_PORT'];
+        $mail->Username = $_ENV['MAIL_USER'];
+        $mail->Password = $_ENV['MAIL_PASSWORD'];
+        $mail->SMTPSecure = 'tls';
     
         $mail->setFrom('alexisgt7168@gmail.com');
         $mail->addAddress('alexisgt7168@gmail.com', 'AppSalon.com');
