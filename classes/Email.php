@@ -29,7 +29,7 @@ class Email {
          $mail->Password = 'ae938c99960f22';
      
          $mail->setFrom('cuentas@appsalon.com');
-         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+         $mail->addAddress('cuentas@appsalon.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
@@ -50,17 +50,17 @@ class Email {
 
     public function enviarInstrucciones() {
 
-        // create a new object
+        
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'e2b6548042e3c9';
-        $mail->Password = '39e50caa49cd18';
+        $mail->Username = '108e9e914500ae';
+        $mail->Password = '16e0867c6b1ca1';
     
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->addAddress('cuentas@appsalon.com', 'LAXTOO');
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
