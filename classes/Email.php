@@ -28,7 +28,7 @@ class Email {
          $mail->Username = '108e9e914500ae';
          $mail->Password = '16e0867c6b1ca1';
      
-         $mail->setFrom('alexisgt7168@gmail.com');
+         $mail->setFrom('superman28_espuma@hotmail.com');
          $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
