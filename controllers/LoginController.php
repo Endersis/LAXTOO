@@ -61,7 +61,7 @@ class LoginController {
 
         $alertas = [];
 
-        if($_SERVER['REQUEST_METHOD'] === '$_POST') {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $auth = new Usuario($_POST);
             $alertas = $auth->validarEmail();
 
@@ -108,7 +108,7 @@ class LoginController {
             $error = true;
         }
 
-        if($_SERVER['REQUEST_METHOD'] === '$_POST') {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Leer el nuevo password y guardarlo
 
             $password = new Usuario($_POST);
@@ -119,7 +119,7 @@ class LoginController {
 
                 $usuario->password = $password->password;
                 $usuario->hashPassword();
-                $usuario->token = ' ';
+                $usuario->token = null;
 
                 $resultado = $usuario->guardar();
                 if($resultado) {

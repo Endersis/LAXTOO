@@ -31,8 +31,8 @@ class Email {
          $mail->Username = 'e2b6548042e3c9';
          $mail->Password = '39e50caa49cd18';
 
-         $mail->setFrom('alexisgt7168@gmail.com');
-         $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
+         $mail->setFrom('correo@LAXTOO.com');
+         $mail->addAddress('acorreo@LAXTOO.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
@@ -41,7 +41,7 @@ class Email {
 
          $contenido = '<html>';
          $contenido .= "<p><strong>Hola " . $this->email .  "</strong> Has Creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>";
-         $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com'>Confirmar Cuenta</a>";        
+         $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com/confirmar-cuenta?token='>Confirmar Cuenta</a>";        
          $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
          $contenido .= '</html>';
          $mail->Body = $contenido;
@@ -62,17 +62,17 @@ class Email {
         $mail->Username = 'e2b6548042e3c9';
         $mail->Password = '39e50caa49cd18';
     
-        $mail->setFrom('alexisgt7168@gmail.com');
-        $mail->addAddress('alexisgt7168@gmail.com', 'LAXTOO.com');
+        $mail->setFrom('correo@LAXTOO.com');
+        $mail->addAddress('correo@LAXTOO.com', 'LAXTOO.com');
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
-        $mail->isHTML(TRUE);
+        $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
-        $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com'>Reestablecer Password</a>";        
+        $contenido .= "<p>Presiona aquí: <a href='https://nameless-chamber-04968.herokuapp.com/confirmar-cuenta?token='>Reestablecer Password</a>";        
         $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
         $contenido .= '</html>';
         $mail->Body = $contenido;
