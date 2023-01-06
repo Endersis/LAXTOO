@@ -3,7 +3,7 @@
 $db = mysqli_connect(
     $_ENV['DB_HOST'],
     $_ENV['DB_USER'], 
-    $_ENV['DB_PASS'] ?? '12345', 
+    $_ENV['DB_PASS'], 
     $_ENV['DB_BD']
 );
 
