@@ -3,6 +3,9 @@
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Dotenv\Dotenv as Dotenv;
+$dotenv = Dotenv::createImmutable('../includes/.env');
+$dotenv->safeLoad();
 
 class Email {
 
@@ -20,16 +23,16 @@ class Email {
     public function enviarConfirmacion() {
 
          // create a new object
-         $mail = new PHPMailer();
-         $mail->isSMTP();
-         $mail->Host = 'smtp.mailtrap.io';
-         $mail->SMTPAuth = true;
-         $mail->Port = 2525;
-         $mail->Username = '4ec54dfb980a42';
-         $mail->Password = 'ae938c99960f22';
+        $mail->isSMTP();
+        $mail->Host = $_ENV['MAIL_HOST'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['MAIL_USER'];
+        $mail->Password = $_ENV['MAIL_PASSWORD'];
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = $_ENV['MAIL_PORT'];
      
-         $mail->setFrom('cuentas@appsalon.com');
-         $mail->addAddress('cuentas@appsalon.com', 'LAXTOO.com');
+         $mail->setFrom('cuentas@LAXTOO.com');
+         $mail->addAddress('cuentas@LAXTOO.com', 'LAXTOO.com');
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
@@ -53,14 +56,15 @@ class Email {
         
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '108e9e914500ae';
-        $mail->Password = '16e0867c6b1ca1';
+        $mail->Username = $_ENV['MAIL_USER'];
+        $mail->Password = $_ENV['MAIL_PASSWORD'];
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = $_ENV['MAIL_PORT'];
     
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'LAXTOO');
+        $mail->setFrom('cuentas@LAXTOO.com');
+        $mail->addAddress('cuentas@LAXTOO.com', 'LAXTOO');
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
