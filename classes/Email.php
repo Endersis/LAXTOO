@@ -36,7 +36,7 @@ class Email {
          $mail->Subject = 'Confirma tu Cuenta';
 
          // Set HTML
-         $mail->isHTML(TRUE);
+         $mail->isHTML(true);
          $mail->CharSet = 'UTF-8';
 
          $contenido = '<html>';
@@ -68,7 +68,7 @@ class Email {
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
-        $mail->isHTML(TRUE);
+        $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 
         $contenido = '<html>';
