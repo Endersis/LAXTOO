@@ -115,7 +115,7 @@ function paginaSiguiente() {
 async function consultarAPI() {
 
     try {
-        const url = '${server}/api/servicios';
+        const url = 'https://nameless-chamber-04968.herokuapp.com//api/servicios';
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
@@ -338,7 +338,7 @@ async function reservarCita() {
 
     try {
         // Petición hacia la api
-        const url = '${server}/api/citas'
+        const url = 'https://nameless-chamber-04968.herokuapp.com//api/citas'
         const respuesta = await fetch(url, {
             method: 'POST',
             body: datos
